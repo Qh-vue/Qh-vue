@@ -1,6 +1,22 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <ul class="layui-nav layui-bg-green">
+      <li class="layui-nav-item">
+        <a href="">控制台<span class="layui-badge">9</span></a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="">个人中心<span class="layui-badge-dot"></span></a>
+      </li>
+      <li class="layui-nav-item">
+        <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+        <dl class="layui-nav-child">
+          <dd><a href="javascript:;">修改信息</a></dd>
+          <dd><a href="javascript:;">安全管理</a></dd>
+          <dd><a href="javascript:;">退了</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <img id="logo"  src="./assets/logo.png" alt="">
     <router-view/>
   </div>
 </template>
@@ -12,12 +28,15 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#app{
+  position:relative;
+  text-align: right;
+}
+#logo{
+  position:absolute;
+  left:30px;
+  top:10px; 
+  width:40px;
+  height:40px
 }
 </style>
