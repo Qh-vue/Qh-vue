@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <ul class="layui-nav layui-bg-green">
+      <li><router-link to=""><img id="logo"  src="./assets/logo.png" alt=""></router-link></li>
       <li class="layui-nav-item">
         <a href="">控制台<span class="layui-badge">9</span></a>
       </li>
@@ -16,8 +17,9 @@
         </dl>
       </li>
     </ul>
-    <img id="logo"  src="./assets/logo.png" alt="">
-    <router-view/>
+    <div class="loginBg">
+      <router-view/>
+      </div>
   </div>
 </template>
 
@@ -29,14 +31,21 @@ export default {
 
 <style>
 #app{
-  position:relative;
+  width: 100%;
+  height: 100%;
   text-align: right;
 }
 #logo{
-  position:absolute;
-  left:30px;
-  top:10px; 
+  float: left; 
   width:40px;
   height:40px
+}
+.loginBg{
+  position: absolute;
+    width: 100%;
+    top: 40px;
+    left: 0;
+    bottom: 0;
+    background-color:rgb(241, 234, 234)
 }
 </style>

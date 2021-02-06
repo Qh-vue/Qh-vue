@@ -1,51 +1,66 @@
 <template>
-  <div class="layui-bg-gray" style="padding: 20px 0">
-    <div class="login" >
-      <form class="layui-form" action="">
-        <div class="layui-form-item">
-          <label class="layui-form-label">用户名</label>
-          <div class="layui-input-block">
-            <input type="text" name="title" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
-          </div>
-        </div>
-        <div class="layui-form-item">
-          <label class="layui-form-label">密码</label>
-          <div class="layui-input-block">
-            <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
-          </div>
-        </div>
-        
-        <div class="layui-form-item">
-          <label class="layui-form-label">复选框</label>
-          <div class="layui-input-block">
-            <input type="checkbox" name="" title="记住用户名" lay-skin="primary" checked>
-          </div>
-        </div>
-        <div class="layui-form-item" style="text-align: center;">
-          <div class="layui-input-block">
-            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-          </div>
-        </div>
-      </form>
+<div class="Loginbox">
+  <form class="layui-form Loginform" action="">
+    <h2 class="Logintitle">用户登录</h2>
+    <div class="layui-form-item">用户名</div>
+    <div class="layui-form-item">
+      <input type="text" name="form.name" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
     </div>
-  </div>
+    <div class="layui-form-item">密码</div>
+    <div class="layui-form-item">
+      <input type="password" name="form.password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+    </div>
+    <div class="layui-form-item">
+     <div class="layui-input-block">
+      <input type="checkbox" name="form.orRemeber" title="记住密码">
+    </div>
+    </div> 
+    <div class="layui-form-item loginbutton">
+      <button class="layui-btn" lay-submit lay-filter="formDemo">登录</button>
+    </div>
+    <div class="layui-form-item loginbutton">
+      <router-link to="/Register">
+      <button type="reset" class="layui-btn layui-btn-primary" style="color:#FF5722;border:none">新用户注册</button>
+      </router-link>
+    </div>
+  </form>
+</div>
 </template>
 
 <script>
 export default {
   name: 'Login',
-  
+  data:function(){
+    return{
+      form:{
+      name:"",
+      password:"",
+      orRemeber:""
+      }
+    }
+  },
 }
 </script>
 <style  scoped>
-.login{
-  background-color:white;
-  width: 60%;
-  margin: 0px auto;
-  padding:10px 20px;
+.Loginbox{
+ width: 600px;
+ background-color: white;
+  margin: 20px auto;
+  padding:10px 30px;
   box-shadow: -5px 5px 5px #bebdbd;
   border-radius:10px;
+}
+.Loginform{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-between;
+}
+.Logintitle{
+  text-align: center;
+}
+.loginbutton{
+  text-align: center;
 }
 </style>
 
