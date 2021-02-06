@@ -2,7 +2,7 @@
  <el-container>
     <el-header>
         <el-menu
-                    :default-active="activeIndex2"
+                    :default-active="activeIndex"
                     class="el-menu-demo"
                     mode="horizontal"
                     @select="handleSelect"
@@ -75,9 +75,24 @@
 </template>
 
 <script>
-export default {
-    name:'App'
-}
+  export default {
+    data() {
+      return {
+        activeIndex: '1',
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  }
 </script>
 <style scoped>
 .el-container{
